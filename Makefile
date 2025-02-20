@@ -4,8 +4,8 @@ CC = gcc
 # Compiler flags
 CFLAGS = -Wall -g
 
-# Source files
-SRCS = main.c window.c grid.c
+# Automatically find all .c files in the directory
+SRCS := $(wildcard *.c)
 
 # Executable name
 EXE = snake

@@ -1,5 +1,6 @@
 #include "dimension.h"
 #include <SDL2/SDL.h>
+#include <SDL2/SDL_surface.h>
 #include <stdio.h>
 
 SDL_Window *draw_window() {
