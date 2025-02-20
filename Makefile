@@ -9,7 +9,7 @@ CFLAGS_1 = -Wall -g
 SRCS := $(wildcard *.c)
 
 # The executable's name (used if you don't specify a target)
-EXE = main
+EXE = snake
 
 # Default target
 .PHONY: all clean run
@@ -23,7 +23,7 @@ all: $(EXE)
 
 # Rule to compile the main executable from all .c files
 $(EXE): $(SRCS)
-	@$(CC) $(CFLAGS) -o $(EXE) $(SRCS) -lm  # Compile and link all .c files into main
+	@$(CC) $(CFLAGS) -o $(EXE) $(SRCS) `sdl2-config --cflags --libs`  # Compile and link all .c files into main
 
 # Run the program (if there is only one executable)
 run: all
