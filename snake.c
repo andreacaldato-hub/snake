@@ -1,5 +1,6 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_pixels.h>
+#include <SDL2/SDL_rect.h>
 #include <SDL2/SDL_stdinc.h>
 #include <stdio.h>
 
@@ -18,8 +19,11 @@ int main() {
     return 1;
   }
   SDL_Renderer *renderer = SDL_CreateRenderer(window, -1, 0);
-  SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
+  SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
   SDL_RenderClear(renderer);
+  SDL_SetRenderDrawColor(renderer, 0, 0, 255, 255);
+  SDL_Rect rect = {300, 200, 200, 150};
+  SDL_RenderFillRect(renderer, &rect);
   SDL_RenderPresent(renderer);
 
   SDL_Delay(5000);
